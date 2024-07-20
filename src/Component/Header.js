@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 //for named import
 export const Title = () => (
     <a href="/">
@@ -5,18 +7,27 @@ export const Title = () => (
     </a>
 );
 
-const HeaderComponent = () => (
-    <div className="header">
-        <Title />
-        <div className="nav-items">
-            <ul>
-                <li>Home</li>
-                <li>About US</li>
-                <li>Contact US</li>
-            </ul>
+const HeaderComponent = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    return (
+        <div className="header">
+            <Title />
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About US</li>
+                    <li>Contact US</li>
+                    {isLoggedIn ? (
+                        <button onClick={() => setIsLoggedIn(false)}>Logout</button>
+                    ) : (
+                        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+                    )}
+                </ul>
+            </div>
         </div>
-    </div>
-);
+    );
+};
 
 
 export default HeaderComponent;
