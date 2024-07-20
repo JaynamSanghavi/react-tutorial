@@ -19,7 +19,7 @@
 
 .card{
   width: 200px;
-  height: 500px;
+  height: 550px;
   border: 1px solid black;
   margin: 10px;
 }
@@ -35,4 +35,12 @@
   margin: 20px;
   flex-wrap: wrap;
 
+}
+
+
+.shimmer-card {
+  width: 200px;
+  height: 550px;
+  background: lightgrey;
+  margin: 20px;
 }
