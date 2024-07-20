@@ -39,7 +39,7 @@ const BodyComponent = () => {
                     setSearchText(e.target.value);
                 }}/>
                 <button type="button" onClick={() => {
-                    setResList(filterData(resList,searchText));
+                    setResList(filterData(restList,searchText));
                 }}>Submit</button>
             </div>
             <div className="card-container">
