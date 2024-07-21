@@ -4,6 +4,9 @@ import ReactDOM from "react-dom/client";
 import HeaderComponent from "./Component/Header";
 import BodyComponent from "./Component/Body";
 import FooterComponent from "./Component/Footer";
+import AboutUSComponent from "./Component/About";
+import ContactUSComponent from "./Component/Contact";
+import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //Named Import
 import {Title} from "./Component/Header";
@@ -44,10 +47,33 @@ import {Title} from "./Component/Header";
 const AppLayout = () => (
     <>
         <HeaderComponent />
-        <BodyComponent />
+        <Outlet />
         <FooterComponent />
     </>
 );
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
+const appRouter = createBrowserRouter([
+    {
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/about",
+          element: <AboutUSComponent />,
+        },
+        {
+          path: "/",
+          element: <BodyComponent />,
+        },
+        {
+          path: "/contact",
+          element: <ContactUSComponent />,
+        },
+      ],
+    },
+  ]);
+  
+  const root = ReactDOM.createRoot(document.getElementById("root"));
+  
+  root.render(<RouterProvider router={appRouter} />);
+  
