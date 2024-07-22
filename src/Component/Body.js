@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import RestCard from "./RestCard";
 import Shimmer from "./Shimmer";
+import { Link } from "react-router-dom";
 
 
 
@@ -57,7 +58,7 @@ const BodyComponent = () => {
                     
                     filterRest?.length > 0 ?
                         filterRest.map((rest) => {
-                            return <RestCard {...rest.info} key={rest.info.id} />
+                            return <Link to={"/rest/"+rest.info.id} key={rest.info.id}>  <RestCard {...rest.info} key={rest.info.id} /> </Link>
                         })
                     :
                         <h1>No Find Match</h1>
