@@ -1,4 +1,4 @@
-import {imgCDN } from "./config";
+import {imgCDN } from "../utils/config";
 const RestCard = ({ name, areaName, cuisines, cloudinaryImageId, aggregatedDiscountInfoV3 }) => {
     let discountMeta = null;
     if (aggregatedDiscountInfoV3?.header){
