@@ -14,7 +14,7 @@ const DetailsComponent = () => {
     return !resDetails ? (
         <Shimmer />
     ) : (
-        <div className="details">
+        <div className="flex">
             <DetailCard {...resDetails?.cards[2]?.card?.card?.info} />
             <DetailMenu {...resDetails?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card} />
         </div>

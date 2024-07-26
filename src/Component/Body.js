@@ -19,14 +19,14 @@ const BodyComponent = () => {
     };
 
     return (
-        <>
+        <div>
             <SearchBox
                 searchText={searchText}
                 setSearchText={setSearchText}
                 onSubmit={handleSearch}
             />
             <CardContainer restaurants={filterRest} />
-        </>
+        </div>
     );
 };
 

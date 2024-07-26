@@ -4,7 +4,7 @@ import RestCard from "./RestCard";
 
 const CardContainer = ({ restaurants }) => {
     return (
-        <div className="card-container">
+        <div className="flex flex-wrap p-5 m-5">
             {restaurants?.length > 0 ? (
                 restaurants.map((rest) => (
                     <Link to={"/rest/" + rest.info.id} key={rest.info.id}>
