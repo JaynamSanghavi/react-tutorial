@@ -23,6 +23,7 @@ const HeaderComponent = () => {
                         <Link to="/about">About US</Link>
                     </li>
                     <li className="px-6"><Link to="/contact">Contact US</Link></li>
+                    <li className="px-6"><Link to="/instamart">Instamart</Link></li>
                 </ul>
                 <div className="px-16">
                     <h1>

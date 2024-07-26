@@ -12,6 +12,7 @@ import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 //Named Import
 import { Title } from "./Component/Header";
+import Instamart from "./Component/Instamart";
 
 
 //React element
@@ -75,6 +76,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/rest/:id",
                 element: <DetailsComponent />,
+            },
+            {
+                path: "/instamart",
+                element: <Instamart />,
             },
         ],
     },
