@@ -9,6 +9,9 @@ import ErrorComponent from "./Component/Error";
 import ContactUSComponent from "./Component/Contact";
 import DetailsComponent from "./Component/Details";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
+import { Provider } from "react-redux";
+import store from "./utils/store";
+import Cart from "./Component/Cart";
 
 //Named Import
 import { Title } from "./Component/Header";
@@ -48,11 +51,11 @@ import Instamart from "./Component/Instamart";
 
 
 const AppLayout = () => (
-    <>
+    <Provider store={store}>
         <HeaderComponent />
         <Outlet />
         <FooterComponent />
-    </>
+    </Provider>
 );
 
 const appRouter = createBrowserRouter([
@@ -72,6 +75,10 @@ const appRouter = createBrowserRouter([
             {
                 path: "/contact",
                 element: <ContactUSComponent />,
+            },
+            {
+                path: "/cart",
+                element: <Cart />,
             },
             {
                 path: "/rest/:id",

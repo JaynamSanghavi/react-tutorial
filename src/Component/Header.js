@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useIsOnline from "../utils/useIsOnline";
+import { useSelector } from "react-redux";
 
 //for named import
 export const Title = () => (
@@ -13,6 +14,8 @@ const HeaderComponent = () => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
     const isOnline = useIsOnline();
 
+    const cartItems = useSelector((store) => store.cart.items);
+
     return (
         <div className="flex justify-between bg-pink-50 shadow-lg">
             <Title />
@@ -24,6 +27,7 @@ const HeaderComponent = () => {
                     </li>
                     <li className="px-6"><Link to="/contact">Contact US</Link></li>
                     <li className="px-6"><Link to="/instamart">Instamart</Link></li>
+                    <li className="px-6"><Link to="/cart">Cart - {cartItems.length}</Link></li>
                 </ul>
                 <div className="px-16">
                     <h1>
